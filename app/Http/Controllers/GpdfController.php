@@ -76,7 +76,7 @@ class GpdfController extends Controller
         $data = $this->getDynamicParams();
 
         $html = view('pdf.example-2-with-arabic', $data)->render();
-        $pdfContent = Gpdf::generate($html);
+        $pdfContent = GpdfFacAde::generate($html);
         return response($pdfContent, 200, ['Content-Type' => 'application/pdf']);
     }
 
