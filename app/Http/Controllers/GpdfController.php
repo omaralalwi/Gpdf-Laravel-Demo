@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Traits\HasViewDynamicParams;
+use Illuminate\Support\Facades\Config;
 use Omaralalwi\Gpdf\Gpdf;
 use Omaralalwi\Gpdf\Facade\Gpdf as GpdfFacAde;
+use Omaralalwi\Gpdf\Enums\{GpdfDefaultSettings as GpdfDefault, GpdfSettingKeys as GpdfSet, GpdfDefaultSupportedFonts};
 
 class GpdfController extends Controller
 {
@@ -35,6 +37,26 @@ class GpdfController extends Controller
     public function generateSecondWayPdf()
     {
         $data = $this->getDynamicParams();
+
+        $html = view('pdf.example-2',$data)->render();
+
+        $gpdf = app(Gpdf::class);
+        $pdfFile = $gpdf->generate($html);
+
+        return response($pdfFile, 200, ['Content-Type' => 'application/pdf']);
+    }
+
+    /*
+     * override some configs
+     * change paper size and font  and some configs, for this pdf file only
+     */
+    public function generateWithCustomInlineconfig()
+    {
+        $data = $this->getDynamicParams();
+
+        Config::set('gpdf.'.GpdfSet::DEFAULT_PAPER_SIZE, 'a3');
+        Config::set('gpdf.'.GpdfSet::DPI, 300);
+        Config::set('gpdf.'.GpdfSet::DEFAULT_FONT, GpdfDefaultSupportedFonts::COURIER);
 
         $html = view('pdf.example-2',$data)->render();
 
