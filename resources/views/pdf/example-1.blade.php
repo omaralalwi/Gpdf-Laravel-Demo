@@ -2,26 +2,7 @@
 <html lang="en">
 <head>
     <title>Example - 1</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        p {
-            color: #666;
-            text-align: center;
-        }
-        .text-center {
-            text-align: center;
-        }
-        ul { list-style-type: none; padding-left: 20px; }
-        img { max-width: 100%; height: auto; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-    </style>
+    @include('pdf.partials.pdf-styles')
 </head>
 <body>
 <h1>Hello, World!</h1>

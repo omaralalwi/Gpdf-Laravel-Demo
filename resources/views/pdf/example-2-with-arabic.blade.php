@@ -4,38 +4,7 @@
     <title>اختبار انشاء ملفات باللغة العربية</title>
     <meta charset='utf-8'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <style>
-        body {
-            direction: rtl;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: center;
-        }
-        hr {
-            border: 0;
-            border-top: 1px solid #000;
-        }
-        .container {
-            width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .text-center {
-            text-align: center;
-        }
-        .mb-3 {
-            margin-bottom: 1rem;
-        }
-        .mt-3 {
-            margin-top: 1rem;
-        }
-    </style>
+    @include('pdf.partials.pdf-styles')
 </head>
 <body>
 <div class="container">
