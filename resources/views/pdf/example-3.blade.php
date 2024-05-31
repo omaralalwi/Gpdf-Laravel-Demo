@@ -25,7 +25,7 @@
 </head>
 <body>
 <h1>Hello, World!</h1>
-<h2 class="text-center">Page in file</h2>
+<h2 class="text-center"> Third Page in file </h2>
 <p>This is a test PDF generated using Gpdf.</p>
 <p>This PDF contains some styled HTML content.</p>
 <p>You can add more content here, such as images, tables, and lists.</p>
