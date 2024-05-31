@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Traits\HasViewDynamicParams;
+use App\Traits\{HasViewDynamicParams, HasDataGenerator};
 use Illuminate\Support\Facades\Config;
 use Omaralalwi\Gpdf\Gpdf;
 use Omaralalwi\Gpdf\Facade\Gpdf as GpdfFacAde;
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Log;
 
 class GpdfController extends Controller
 {
-    use HasViewDynamicParams;
+    use HasViewDynamicParams, HasDataGenerator;
 
     /*
      * this is first way using Gpdf facade .
@@ -54,7 +54,7 @@ class GpdfController extends Controller
      * override some configs
      * change paper size and font  and some configs, for this pdf file only
      */
-    public function generateWithCustomInlineconfig()
+    public function generateWithCustomCustomConfigs()
     {
         $data = $this->getDynamicParams();
 
@@ -127,6 +127,18 @@ class GpdfController extends Controller
         $html = view('pdf.example-2-with-arabic', $data)->render();
         $pdfContent = GpdfFacAde::generate($html);
         return response($pdfContent, 200, ['Content-Type' => 'application/pdf']);
+    }
+
+    public function generateAdvanceWithFixedHeader()
+    {
+        $pages = $this->generateData(10);
+        $html = view('pdf.advance-example', compact('pages'))->render();
+
+        $gpdf = app(Gpdf::class);
+        $file = $gpdf->generateWithStore($html, null, 'complex-advance-pdf', true, false);
+        $fileUrl = $file['ObjectURL'];
+
+        Log::info($fileUrl);
     }
 
 }
