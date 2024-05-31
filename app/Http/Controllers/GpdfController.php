@@ -131,12 +131,7 @@ class GpdfController extends Controller
 
     public function generateAdvanceWithFixedHeader()
     {
-        $data = $this->getDynamicParams();
-
-        // Generate data for more than 10 pages
         $pages = $this->generateData(10);
-
-        // Pass data to the Blade view
         $html = view('pdf.advance-example', compact('pages'))->render();
 
         $gpdf = app(Gpdf::class);
