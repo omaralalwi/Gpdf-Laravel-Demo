@@ -14,6 +14,9 @@
             color: #666;
             text-align: center;
         }
+        .text-center {
+            text-align: center;
+        }
         ul { list-style-type: none; padding-left: 20px; }
         img { max-width: 100%; height: auto; }
         table { width: 100%; border-collapse: collapse; }
@@ -22,6 +25,7 @@
 </head>
 <body>
 <h1>Hello, World!</h1>
+<h2 class="text-center"> another Page in file </h2>
 <p>This is a test PDF generated using Gpdf.</p>
 <p>This PDF contains some styled HTML content.</p>
 <p>You can add more content here, such as images, tables, and lists.</p>

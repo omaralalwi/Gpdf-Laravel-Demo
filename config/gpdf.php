@@ -1,6 +1,7 @@
 <?php
 
-use Omaralalwi\Gpdf\Enums\{GpdfDefaultSettings as GpdfDefault, GpdfSettingKeys as GpdfSet, GpdfDefaultSupportedFonts};
+use Omaralalwi\Gpdf\Enums\{GpdfDefaultSettings as GpdfDefault, GpdfSettingKeys as GpdfSet,
+    GpdfStorageDrivers, GpdfDefaultSupportedFonts};
 
 /**
  * Configuration file for the Gpdf package.
@@ -54,6 +55,15 @@ return [
      */
     GpdfSet::CHROOT => GpdfDefault::CHROOT,
 
+    GpdfSet::STORAGE_PATH => GpdfDefault::STORAGE_PATH,
+
+    GpdfSet::AWS_BUCKET => '',
+
+    GpdfSet::AWS_REGION => '',
+
+    GpdfSet::AWS_KEY => '',
+
+    GpdfSet::AWS_SECRET => '',
     /**
      * Enable or disable entity conversion.
      * @var bool
@@ -77,12 +87,6 @@ return [
      * @var string|null
      */
     GpdfSet::LOG_OUTPUT_FILE => GpdfDefault::LOG_OUTPUT_FILE,
-
-    /**
-     * Storage path for generated PDFs.
-     * @var string
-     */
-    GpdfSet::STORAGE_PATH => GpdfDefault::STORAGE_PAT,
 
     /**
      * Default media type for the generated PDFs.
@@ -136,7 +140,7 @@ return [
      * Enable or disable JavaScript execution in the PDFs.
      * @var bool
      */
-    GpdfSet::IS_JAVASCRIPT_ENABLED => GpdfDefault::IS_JAVASCRIPT_ENABLED,
+    GpdfSet::IS_JAVASCRIPT_ENABLED => true,
 
     /**
      * Enable or disable HTML5 parser in the PDFs.

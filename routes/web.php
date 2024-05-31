@@ -8,4 +8,6 @@ Route::get('/pdf/generate/second', [GpdfController::class, 'generateSecondWayPdf
 Route::get('/pdf/generate-with-custom-inline-config', [GpdfController::class, 'generateWithCustomInlineconfig']);
 Route::get('/pdf/generate-with-stream', [GpdfController::class, 'generateAndStream']);
 Route::get('/pdf/generate-with-store', [GpdfController::class, 'generateAndStore']);
+Route::get('/pdf/generate-with-store-to-s3', [GpdfController::class, 'generateAndStoreToS3']);
+Route::get('/pdf/generate-with-store-multiple-pages', [GpdfController::class, 'generateAndStoreMultiplePages']);
 Route::get('/pdf/generate/arabic', [GpdfController::class, 'generatePdfWithArabicContent']);
