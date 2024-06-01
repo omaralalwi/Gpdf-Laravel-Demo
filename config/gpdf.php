@@ -57,13 +57,13 @@ return [
 
     GpdfSet::STORAGE_PATH => GpdfDefault::STORAGE_PATH,
 
-    GpdfSet::AWS_BUCKET => '',
+    GpdfSet::AWS_BUCKET => env('AWS_BUCKET'),
 
-    GpdfSet::AWS_REGION => '',
+    GpdfSet::AWS_REGION => env('AWS_DEFAULT_REGION'),
 
-    GpdfSet::AWS_KEY => '',
+    GpdfSet::AWS_KEY => env('AWS_ACCESS_KEY_ID'),
 
-    GpdfSet::AWS_SECRET => '',
+    GpdfSet::AWS_SECRET => env('AWS_SECRET_ACCESS_KEY'),
     /**
      * Enable or disable entity conversion.
      * @var bool

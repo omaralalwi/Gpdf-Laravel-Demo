@@ -54,7 +54,7 @@ class GpdfController extends Controller
      * override some configs
      * change paper size and font  and some configs, for this pdf file only
      */
-    public function generateWithCustomCustomConfigs()
+    public function generateWithCustomInlineConfig()
     {
         $data = $this->getDynamicParams();
 
