@@ -1,5 +1,11 @@
 # Gpdf Laravel Demo App
 
+<p align="center">
+  <a href="https://omaralalwi.github.io/Gpdf-Laravel-Demo" target="_blank">
+    <img src="https://raw.githubusercontent.com/omaralalwi/Gpdf-Laravel-Demo/master/public/images/main-banner.png" alt="Gpdf">
+  </a>
+</p>
+
 this is demo for [Gpdf Package](https://github.com/omaralalwi/Gpdf) with laravel.
 
 
@@ -20,7 +26,7 @@ composer update
 ```
 php artisan serve
 ```
-**Open Routes** , see routes file and code in `GpdfController` .
+**Open app link**.
 
 
 

@@ -31,8 +31,8 @@
                 </div>
             </main>
 
-            <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+            <footer class="py-16 text-center text-black dark:text-white/70 text-lg">
+                Demo Laravel App For : <a class="text-white" href="https://github.com/omaralalwi/gpdf" target="_blank"> Gpdf Package </a>
             </footer>
         </div>
     </div>
