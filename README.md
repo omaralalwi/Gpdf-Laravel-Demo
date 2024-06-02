@@ -1,7 +1,7 @@
 # Gpdf Laravel Demo App
 
 <p align="center">
-  <a href="https://omaralalwi.github.io/Gpdf-Laravel-Demo" target="_blank">
+  <a>
     <img src="https://raw.githubusercontent.com/omaralalwi/Gpdf-Laravel-Demo/master/public/images/main-banner.png" alt="Gpdf">
   </a>
 </p>
