@@ -1,4 +1,9 @@
 <style>
+    @page {
+        /*to get full page */
+        margin:0;
+        text-align: center;
+    }
     body {
         background-color: #f0f0f0;
     }
