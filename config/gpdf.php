@@ -141,6 +141,14 @@ return [
     GpdfSet::IS_REMOTE_ENABLED => GpdfDefault::IS_REMOTE_ENABLED,
 
     /**
+     *
+     * Set Max number of chars you can fit in one line, default is 50
+     *
+     * @var integer
+     */
+    GpdfSet::MAX_CHARS_PER_LINE => 100,
+
+    /**
      * List of allowed remote hosts.
      * @var array
      */
