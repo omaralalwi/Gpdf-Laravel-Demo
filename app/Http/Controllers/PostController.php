@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Omaralalwi\LexiTranslate\Enums\Language;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::latest()->paginate(10);
+        $local = $request->get('local', app()->getLocale());
+        $keyWord = 'title';
+
+        $posts = Post::searchByTranslation('title', $keyWord, $local)->paginate(10);
         return view('posts.index', compact('posts'));
     }
 

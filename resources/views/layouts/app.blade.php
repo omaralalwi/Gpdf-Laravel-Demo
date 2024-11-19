@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title', 'Laravel')</title>
+    <title>@yield('title', config('app.name')) </title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -17,8 +17,9 @@
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
 
 <nav class="bg-gray-800 p-4">
+    {{ app()->getLocale()  }}
 <div class="container mx-auto">
-    <a href="/" class="text-white text-xl">My Laravel App</a>
+    <a href="/" class="text-white text-xl"> {{ config('app.name') }} </a>
 </div>
 </nav>
 
@@ -26,11 +27,7 @@
 @yield('content')
 </div>
 
-<footer class="bg-gray-800 text-white py-4 mt-6">
-<div class="container mx-auto text-center">
-    <p>&copy; 2024 My Laravel App</p>
-</div>
-</footer>
+@include('layouts.partials.footer')
 
 <script src="{{ asset('js/app.js') }}"></script>
 @include('layouts.partials.custom-js')

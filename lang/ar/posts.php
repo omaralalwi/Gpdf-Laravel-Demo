@@ -20,5 +20,9 @@ return [
         'already_exists' => 'هذا المنشور موجود سابقاً',
     ],
 
+    'buttons' => [
+        'read_more' => 'اقرأ المزيد',
+    ],
+
 ];
 
