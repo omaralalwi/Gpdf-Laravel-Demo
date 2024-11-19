@@ -1,31 +1,30 @@
-@extends('layouts.app')
+<x-guest-layout>
+    @section('title', __('posts.pages.index'))
 
-@section('title', 'All Posts')
+    <x-slot name="header">
+        <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white">{{ __('posts.pages.index') }}</h1>
+    </x-slot>
 
-@section('content')
-    <div class="mb-6">
-        <h1 class="text-3xl font-bold"> {{ __('posts.pages.index') }} </h1>
-    </div>
-
-    <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-        <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-            <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-
-                <main class="mt-6">
-                    <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
 
                         @foreach ($posts as $post)
-                            @include('posts.partials.post-item', ['post' => $post])
+                            <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+                                <div class="relative">
+                                    <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="w-full h-56 object-cover">
+                                    <div class="absolute top-0 left-0 p-4 bg-gradient-to-t from-black opacity-50 text-white">
+                                        <h2 class="text-2xl font-semibold">{{ $post->title }}</h2>
+                                    </div>
+                                </div>
+
+                                <div class="p-6">
+                                    <p class="text-gray-600 dark:text-gray-300 line-clamp-3">{{ $post->excerpt }}</p>
+                                    <a href="{{ route('posts.show', $post->id) }}" class="text-blue-500 mt-2 inline-block hover:underline">Read more</a>
+                                </div>
+                            </div>
                         @endforeach
 
-                    </div>
-                </main>
-
-
-            </div>
+        <!-- Pagination -->
+        <div class="mt-6">
+            {{ $posts->links('vendor.pagination.tailwind') }}
         </div>
-
-    <div class="mt-6">
-        {{ $posts->links() }}
     </div>
-@endsection
+</x-guest-layout>
