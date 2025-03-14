@@ -2,7 +2,7 @@
 
 <p align="center">
   <a>
-    <img src="https://raw.githubusercontent.com/omaralalwi/Gpdf-Laravel-Demo/master/public/images/main-banner.png" alt="Gpdf">
+    <img src="https://raw.githubusercontent.com/omaralalwi/Gpdf-Laravel-Demo/master/public/images/main-banner-1.png" alt="Gpdf">
   </a>
 </p>
 
