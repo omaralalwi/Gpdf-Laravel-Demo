@@ -141,4 +141,13 @@ class GpdfController extends Controller
         Log::info($fileUrl);
     }
 
+    public function generatePdfWithImages()
+    {
+        $data = $this->getDynamicParams();
+
+        $html = view('pdf.example-with-images', $data)->render();
+        $pdfContent = GpdfFacAde::generate($html);
+        return response($pdfContent, 200, ['Content-Type' => 'application/pdf']);
+    }
+
 }
