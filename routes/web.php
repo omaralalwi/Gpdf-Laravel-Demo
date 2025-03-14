@@ -13,6 +13,7 @@ Route::get('/', HomeController::class)->name('home');
 Route::prefix('/pdf')->group(function () {
 
     Route::get('/generate', [GpdfController::class, 'generatePdf'])->name('generatePdf');
+    Route::get('/generate-with-images', [GpdfController::class, 'generatePdfWithImages'])->name('generatePdfWithImages');
     Route::get('/generate/second', [GpdfController::class, 'generateSecondWayPdf'])->name('generateSecondWayPdf');
     Route::get('/generate-with-custom-inline-config', [GpdfController::class, 'generateWithCustomInlineConfig'])->name('generateWithCustomInlineConfig');
     Route::get('/generate-and-stream', [GpdfController::class, 'generateAndStream'])->name('generateAndStream');

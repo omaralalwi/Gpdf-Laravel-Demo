@@ -23,7 +23,7 @@
             <li><a class="px-6 py-3 rounded-md text-lg font-semibold text-white bg-transparent border border-white hover:bg-blue-700 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" href="{{ route('generateAndStore') }}" target="_blank">Generate & Store</a></li>
             <li><a class="px-6 py-3 rounded-md text-lg font-semibold text-white bg-transparent border border-white hover:bg-blue-700 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" href="{{ route('generateAndStoreToS3') }}" target="_blank">Generate & Store to S3</a></li>
             <li><a class="px-6 py-3 rounded-md text-lg font-semibold text-white bg-transparent border border-white hover:bg-blue-700 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" href="{{ route('generateAndStoreMultiplePages') }}" target="_blank">Generate Multiple Pages</a></li>
-            <li><a class="px-6 py-3 rounded-md text-lg font-semibold text-white bg-transparent border border-white hover:bg-blue-700 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" href="{{ route('generatePdfWithArabicContent') }}" target="_blank">Generate with Arabic Content</a></li>
+            <li><a class="px-6 py-3 rounded-md text-lg font-semibold text-white bg-transparent border border-white hover:bg-blue-700 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" href="{{ route('generatePdfWithImages') }}" target="_blank">Generate with Images</a></li>
         </ul>
     </div>
 </div>
