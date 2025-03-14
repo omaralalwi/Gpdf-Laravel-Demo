@@ -1,7 +1,11 @@
 <?php
 
-use Omaralalwi\Gpdf\Enums\{GpdfDefaultSettings as GpdfDefault, GpdfSettingKeys as GpdfSet,
-    GpdfStorageDrivers, GpdfDefaultSupportedFonts};
+use Omaralalwi\Gpdf\Enums\{
+    GpdfDefaultSettings as GpdfDefault,
+    GpdfSettingKeys as GpdfSet,
+    GpdfStorageDrivers,
+    GpdfDefaultSupportedFonts
+};
 
 /**
  * Configuration file for the Gpdf package.
@@ -17,19 +21,19 @@ return [
      * Temporary directory for storing temporary PDF files.
      * @var string|null
      */
-    GpdfSet::TEMP_DIR => GpdfDefault::TEMP_DIR,
+    GpdfSet::TEMP_DIR => sys_get_temp_dir(),
 
     /**
      * Directory for storing font files.
      * @var string
      */
-    GpdfSet::FONT_DIR => realpath(__DIR__.GpdfDefault::FONT_DIR),
+    GpdfSet::FONT_DIR => realpath(__DIR__ . GpdfDefault::FONT_DIR),
 
     /**
      * Directory for storing font cache files.
      * @var string
      */
-    GpdfSet::FONT_CACHE =>  realpath(__DIR__.GpdfDefault::FONT_DIR), // same to font dir to avoid cache problems
+    GpdfSet::FONT_CACHE =>  realpath(__DIR__ . GpdfDefault::FONT_DIR), // same to font dir to avoid cache problems
 
     /**
      * Default font for generating PDFs.
@@ -47,11 +51,18 @@ return [
     GpdfSet::SHOW_NUMBERS_AS_HINDI => false,
 
     /**
+     *
+     * Set Max number of chars you can fit in one line, default is 50
+     *
+     * @var integer
+     */
+    GpdfSet::MAX_CHARS_PER_LINE => 100,
+
+    /**
      * Font height ratio setting.
      * @var float
      */
-//    GpdfSet::FONT_HEIGHT_RATIO => GpdfDefault::FONT_HEIGHT_RATIO,
-    GpdfSet::FONT_HEIGHT_RATIO => 1.4,
+    GpdfSet::FONT_HEIGHT_RATIO => GpdfDefault::FONT_HEIGHT_RATIO,
 
     /**
      * Enable or disable font subsetting.
@@ -63,7 +74,7 @@ return [
      * Chroot directory for security purposes.
      * @var string|null
      */
-    GpdfSet::CHROOT => GpdfDefault::CHROOT,
+    GpdfSet::CHROOT => realpath(dirname(__DIR__)),
 
     GpdfSet::STORAGE_PATH => GpdfDefault::STORAGE_PATH,
 
@@ -74,6 +85,7 @@ return [
     GpdfSet::AWS_KEY => env('AWS_ACCESS_KEY_ID'),
 
     GpdfSet::AWS_SECRET => env('AWS_SECRET_ACCESS_KEY'),
+
     /**
      * Enable or disable entity conversion.
      * @var bool
@@ -139,14 +151,6 @@ return [
      * @var bool
      */
     GpdfSet::IS_REMOTE_ENABLED => GpdfDefault::IS_REMOTE_ENABLED,
-
-    /**
-     *
-     * Set Max number of chars you can fit in one line, default is 50
-     *
-     * @var integer
-     */
-    GpdfSet::MAX_CHARS_PER_LINE => 100,
 
     /**
      * List of allowed remote hosts.
